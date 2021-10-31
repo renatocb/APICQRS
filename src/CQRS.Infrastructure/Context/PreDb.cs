@@ -24,7 +24,7 @@ namespace Context
             if (!context.Imoveis.Any())
             {
                 Console.WriteLine("Seeding data...");
-                string json = new WebClient().DownloadString("http://CQRS-code-challenge.s3-website-us-east-1.amazonaws.com/sources/source-2.json");
+                string json = new WebClient().DownloadString("http://grupozap-code-challenge.s3-website-us-east-1.amazonaws.com/sources/source-2.json");
                 List<Imoveis> imoveis = JsonConvert.DeserializeObject<List<Imoveis>>(json);
                 context.Imoveis.AddRange(imoveis);
                 context.SaveChanges();
